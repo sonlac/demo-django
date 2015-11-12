@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<h2>Latest models (all users)</h2>
+{% endblock %}
+
+{% block content %}
+{% if latest_model_list %}
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="text-center">Model Name</th>
+        <th class="text-center">File Path</th>
+        <th class="text-center">User</th>
+        <th class="text-center">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for model in latest_model_list %}
+      <tr class="info">
+        <td class="text-center">{{model.filename}}</td>
+        <td class="text-center">{{model.filepath}}</td>
+        <td class="text-center">{{model.uploaded_by_user}}</td>
+        <td class="text-center">{{model.date_uploaded}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+<p>No models are available.</p>
+{% endif %}
+{% endblock %}
+

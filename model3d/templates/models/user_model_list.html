@@ -1,0 +1,11 @@
+{% extends 'models/model_list.html' %}
+{% block title %}
+<h4>Models uploaded by  <a href="#"> {{ username }} </a></h4>
+{% if badges.Collector %}
+<h2>Congrats, you are a Collector now :)</h2>
+{% endif %}
+{% if badges.Pioneer %}
+<h2>Congrats, you are a Pioneer now :)</h2>
+{% endif %}
+<h6>Date joined: {{ user.date_joined }}</h6>
+{% endblock %}
